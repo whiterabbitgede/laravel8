@@ -11,6 +11,8 @@ WORKDIR /var/www/html
 #RUN chown nginx:nginx -R /var/www/html
 COPY --chown=nginx:nginx --chmod=775 . .
 
+RUN composer install
+
 # Copy Nginx configuration
 #Bookworm
 # COPY default.conf /etc/nginx/sites-available/default
